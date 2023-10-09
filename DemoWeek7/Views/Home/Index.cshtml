@@ -1,0 +1,15 @@
+﻿@using DemoWeek7.Models.ViewModels
+@model DemoWeek7.Models.ViewModels.BookingViewModel
+
+<ul>
+    @* Loop over RoomViewModels in ViewModel for View *@
+    @foreach (RoomViewModel room in Model.Rooms)
+    {
+        <li>
+            <div class="kamer @(room.AtCapacity ? "red" : "")">
+                <input type="checkbox" id="@room.Id" name="@room.Id" />
+                <label for="@room.Id">@room.Name</label>
+            </div>
+        </li>
+    }
+</ul>
